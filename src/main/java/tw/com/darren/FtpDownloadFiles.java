@@ -10,6 +10,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
+import org.apache.commons.net.ftp.FTP;
 import org.apache.commons.net.ftp.FTPClient;
 import org.apache.commons.net.ftp.FTPFile;
 import org.apache.log4j.Logger;
@@ -40,6 +41,7 @@ public class FtpDownloadFiles {
 			ftpClient = new FTPClient();
 			ftpClient.connect(ftpIp);
 			ftpClient.login(username, password);
+			ftpClient.setFileType(FTP.BINARY_FILE_TYPE);
 			ftpClient.changeWorkingDirectory(remotePath);
 			String date = format(new Date(), DATE_PATTERN, Locale.ENGLISH);
 			for (final FTPFile item : ftpClient.listFiles("*.zip")) {
