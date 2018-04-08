@@ -9,7 +9,8 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.OutputStream;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.jcraft.jsch.Channel;
 import com.jcraft.jsch.ChannelSftp;
@@ -24,7 +25,7 @@ import com.jcraft.jsch.Session;
  * @Version 26 Mar 2018, Darren Tsai, new
  **/
 public class SftpDownloadFiles {
-	private static final Logger LOG = Logger.getLogger(SftpDownloadFiles.class);
+	private static final Logger LOG = LoggerFactory.getLogger(SftpDownloadFiles.class);
 
 	public static void downloadFiles() throws Exception {
 		final String ftpIp = InitialProperties.properties.getProperty("ftp_ip");
@@ -58,6 +59,7 @@ public class SftpDownloadFiles {
 			}
 			bis.close();
 			bos.close();
+			LOG.info("File(s) downloaded successfully.");
 		}
 		catch (Exception e) {
 			LOG.error(e.getMessage(), e);
@@ -72,6 +74,7 @@ public class SftpDownloadFiles {
 			if (null != session) {
 				session.disconnect();
 			}
+			LOG.info("SFTP is disconnected.");
 		}
 	}
 }

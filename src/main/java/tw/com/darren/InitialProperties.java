@@ -8,7 +8,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @Description Initial properties
@@ -18,7 +19,7 @@ import org.apache.log4j.Logger;
  * @Version 27 Feb 2018, Darren Tsai, new
  **/
 public class InitialProperties {
-	private static final Logger	LOG			= Logger.getLogger(InitialProperties.class);
+	private static final Logger	LOG			= LoggerFactory.getLogger(InitialProperties.class);
 	public static Properties	properties	= new Properties();
 	static {
 		InputStream is = InitialProperties.class.getResourceAsStream("/ftp.properties");

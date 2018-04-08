@@ -12,7 +12,8 @@ import java.util.Locale;
 import java.util.Properties;
 
 import org.apache.commons.io.FileUtils;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.jcraft.jsch.Channel;
 import com.jcraft.jsch.ChannelSftp;
@@ -27,7 +28,7 @@ import com.jcraft.jsch.Session;
  * @Version 2 Mar 2018, Darren Tsai, new
  **/
 public class SftpUploadFiles {
-	private static final Logger LOG = Logger.getLogger(SftpUploadFiles.class);
+	private static final Logger LOG = LoggerFactory.getLogger(SftpUploadFiles.class);
 
 	public static void uploadFiles() throws Exception {
 		final String ftpIp = InitialProperties.properties.getProperty("ftp_ip");
