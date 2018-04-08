@@ -13,7 +13,8 @@ import java.util.Locale;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.net.ftp.FTP;
 import org.apache.commons.net.ftp.FTPClient;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @Description FTP uploads multiple file(s)
@@ -23,7 +24,7 @@ import org.apache.log4j.Logger;
  * @Version 2 Mar 2018, Darren Tsai, new
  **/
 public class FtpUploadFiles {
-	private static final Logger LOG = Logger.getLogger(FtpUploadFiles.class);
+	private static final Logger LOG = LoggerFactory.getLogger(FtpUploadFiles.class);
 
 	public static void uploadFiles() {
 		final String ftpIp = InitialProperties.properties.getProperty("ftp_ip");

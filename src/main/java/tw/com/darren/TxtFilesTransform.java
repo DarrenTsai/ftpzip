@@ -17,7 +17,8 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @Description Reading, writing multiple txt file(s) and converting to String.
@@ -27,7 +28,7 @@ import org.apache.log4j.Logger;
  * @Version 8 Mar 2018, Darren Tsai, new
  **/
 public class TxtFilesTransform {
-	private static final Logger	LOG			= Logger.getLogger(TxtFilesTransform.class);
+	private static final Logger	LOG			= LoggerFactory.getLogger(TxtFilesTransform.class);
 	private static final String	TEXTNAME	= "_P7.txt";
 
 	public static void txtFilesTransformTask() {

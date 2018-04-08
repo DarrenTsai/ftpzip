@@ -9,7 +9,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Locale;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import net.lingala.zip4j.core.ZipFile;
 import net.lingala.zip4j.model.ZipParameters;
@@ -23,7 +24,7 @@ import net.lingala.zip4j.util.Zip4jConstants;
  * @Version 27 Feb 2018, Darren Tsai, new
  **/
 public class ZipUtil {
-	private static final Logger	LOG		= Logger.getLogger(ZipUtil.class);
+	private static final Logger	LOG		= LoggerFactory.getLogger(ZipUtil.class);
 	private static final String	ZIPNAME	= "_P7.zip";
 
 	public static void zipTask() {

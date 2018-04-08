@@ -12,7 +12,8 @@ import java.util.Locale;
 
 import javax.swing.filechooser.FileNameExtensionFilter;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import net.lingala.zip4j.core.ZipFile;
 import net.lingala.zip4j.model.FileHeader;
@@ -25,7 +26,7 @@ import net.lingala.zip4j.model.FileHeader;
  * @Version 27 Feb 2018, Darren Tsai, new
  **/
 public class UnzipUtil {
-	private static final Logger LOG = Logger.getLogger(UnzipUtil.class);
+	private static final Logger LOG = LoggerFactory.getLogger(UnzipUtil.class);
 
 	public static boolean unzipTask() {
 		return unzipMultiFiles(InitialProperties.properties.getProperty("zip_file_path"), InitialProperties.properties.getProperty("file_path"));

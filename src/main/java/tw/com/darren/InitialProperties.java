@@ -21,7 +21,7 @@ public class InitialProperties {
 	private static final Logger	LOG			= Logger.getLogger(InitialProperties.class);
 	public static Properties	properties	= new Properties();
 	static {
-		InputStream is = InitialProperties.class.getResourceAsStream("/ftpZip.properties");
+		InputStream is = InitialProperties.class.getResourceAsStream("/ftp.properties");
 		try {
 			properties.load(is);
 		}
